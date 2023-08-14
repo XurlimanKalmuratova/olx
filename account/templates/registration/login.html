@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Login page
+{% endblock %}
+
+{% block content %}
+    <div class="loggg">
+        <h1 id="loging">Log in</h1>
+            <div id="loginout">
+                If you don't have an account, please <a href="{% url 'register' %}">sign up</a>
+                <form action="" method="post">
+                    {{ form.as_p }}
+                    {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}">
+                    Forgotten password?<a href="{% url 'password_reset' %}">Reset it</a>
+                    <p id="inp">
+                        <input type="submit" value="Log in">
+                    </p>
+                </form>
+            </div>
+    </div>
+{% endblock %}

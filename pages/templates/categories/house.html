@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Household goods
+{% endblock title %}
+
+{% block content %}
+    <h1>Household goods Sale</h1>
+    {% for household in households %}
+        <div class="product">
+            <h2>{{ household.title }}</h2>
+            <a href="{% url 'house_detail' household.pk %}"><img src="{{ household.image.url }}" alt="product"/></a>
+            <p>Added: {{ household.date }}</p>
+            <p>Price: ${{ household.price }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

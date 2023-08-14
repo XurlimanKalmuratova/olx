@@ -1,0 +1,10 @@
+{% load static %}
+<h3 id="name">Main categories</h3>
+<div class="category">
+    <a href="{% url 'clothes' %}" ><img src="{% static 'images/jpg/clothes.png' %}" alt="home"><p>Clothes</p></a>
+    <a href="{% url 'electronics' %}" ><img src="{% static 'images/png/elec.png' %}" alt="home"><p>Electronics</p></a>
+    <a href="{% url 'furnitures' %}" ><img src="{% static 'images/png/furnuture.png' %}" alt="home"><p>Furnuture</p></a>
+    <a href="{% url 'sports' %}" ><img src="{% static 'images/png/sport.png' %}" alt="home"><p>Sport</p></a>
+    <a href="{% url 'household' %}"><img src="{% static 'images/png/housegoods.png' %}" alt="home"><p>Household</p></a>
+</div>
+

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Sport
+{% endblock title %}
+
+{% block content %}
+    <div class="description">
+        <h2>{{ household.title}}</h2>
+        <img src="{{ household.image.url }}" alt="product"/>
+        <p>{{ household.description}}</p>
+        <p>Price: ${{ household.price}}</p>
+        <p>Author: {{ household.author }}</p>
+        <p>Condition: {{ household.condition }}</p>
+        <p>Date: {{ household.date }}</p>
+        <p>Author's number: +{{ household.author_num }}</p>
+        <button class="button-1" role="button">Buy Now </button>
+
+        <p>
+            <a href="{% url 'household_delete' household.pk%}">Delete</a>
+            <a href="{% url 'household_update' household.pk%}">Update</a>
+        </p>
+        
+    </div>
+{% endblock %}

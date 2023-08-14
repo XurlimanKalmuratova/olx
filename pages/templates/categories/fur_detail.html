@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Furnuture Sale
+{% endblock title %}
+
+{% block content %}
+    <div class="description">
+        <h2>{{ furniture.title}}</h2>
+        <img src="{{ furniture.image.url }}" alt="Piano"/>
+        <p>{{ furniture.description}}</p>
+        <p>Price: ${{ furniture.price}}</p>
+        <p>Author: {{ furniture.author }}</p>
+        <p>Condition: {{ furniture.condition }}</p>
+        <p>Date: {{ furniture.date }}</p>
+        <p>Author's number: +{{ furniture.author_num }}</p>
+        <button class="button-1" role="button">Buy Now </button>
+
+        <p>
+            <a href="{% url 'furniture_delete' furniture.pk %}">Delete</a>
+            <a href="{% url 'furniture_update' furniture.pk %}">Update</a>
+        </p>
+        
+    </div>
+{% endblock %}

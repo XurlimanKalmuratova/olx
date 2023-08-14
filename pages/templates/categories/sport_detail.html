@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Sport
+{% endblock title %}
+
+{% block content %}
+    <div class="description">
+        <h2>{{ sport.title}}</h2>
+        <img src="{{ sport.image.url }}" alt="product"/>
+        <p>{{ sport.description}}</p>
+        <p>Price: ${{ sport.price}}</p>
+        <p>Author: {{ sport.author }}</p>
+        <p>Condition: {{ sport.condition }}</p>
+        <p>Date: {{ sport.date }}</p>
+        <p>Author's number: +{{ sport.author_num }}</p>
+        <button class="button-1" role="button">Buy Now </button>
+
+        <p>
+            <a href="{% url 'sports_delete' sport.pk%}">Delete</a>
+            <a href="{% url 'sports_update' sport.pk%}">Update</a>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Electonics
+{% endblock title %}
+
+{% block content %}
+    <h1>Electonics Sale</h1>
+    {% for electronic in electronics %}
+        <div class="product">
+            <h2>{{ electronic.title}}</h2>
+            <a href="{% url 'elec_detail' electronic.pk %}"><img src="{{ electronic.image.url }}" alt="product"/></a>
+            <p>Added: {{ electronic.date }}</p>
+            <p>Price: ${{ electronic.price }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

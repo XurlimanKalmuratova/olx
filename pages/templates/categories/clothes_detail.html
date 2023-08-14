@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Sale page
+{% endblock title %}
+
+{% block content %}
+    <div class="description">
+        <h2>{{ cloth.title}}</h2>
+        <img src="{{ cloth.image.url }}" alt="Piano"/>
+        <p>{{ cloth.description}}</p>
+        <p>Price: ${{ cloth.price}}</p>
+        <p>Author: {{ cloth.author }}</p>
+        <p>Condition: {{ cloth.condition }}</p>
+        <p>Date: {{ cloth.date }}</p>
+        <p>Author's number: +{{ cloth.author_num}}</p>
+        <button class="button-1" role="button">Buy Now </button>
+        <p>
+            <a href="{% url 'clothes_delete' cloth.pk %}">Delete</a>
+            <a href="{% url 'clothes_update' cloth.pk %}">Update</a>
+        </p>
+        
+    </div>
+{% endblock %}

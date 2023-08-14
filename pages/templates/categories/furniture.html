@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Furniture
+{% endblock title %}
+
+{% block content %}
+    <h1>Furnuture Sale</h1>
+    {% for furniture in furnitures %}
+        <div class="product">
+            <h2>{{ furniture.title }}</h2>
+            <a href="{% url 'fur_detail' furniture.pk %}"><img src="{{ furniture.image.url }}" alt="product"/></a>
+            <p>Added: {{ furniture.date }}</p>
+            <p>Price: ${{ furniture.price }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

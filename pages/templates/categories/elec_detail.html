@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Electronics
+{% endblock title %}
+
+{% block content %}
+    <div class="description">
+        <h2>{{ electronic.title}}</h2>
+        <img src="{{ electronic.image.url }}" alt="Piano"/>
+        <p>{{ electronic.description}}</p>
+        <p>Price: ${{ electronic.price}}</p>
+        <p>Author: {{ electronic.author }}</p>
+        <p>Condition: {{ electronic.condition }}</p>
+        <p>Date: {{ electronic.date }}</p>
+        <p>Author's number: +{{ electronic.author_num }}</p>
+        <button class="button-1" role="button">Buy Now </button>
+
+        <p>
+            <a href="{% url 'electronics_delete' electronic.pk%}">Delete</a>
+            <a href="{% url 'electronics_update' electronic.pk%}">Update</a>
+        </p>
+        
+    </div>
+{% endblock %}

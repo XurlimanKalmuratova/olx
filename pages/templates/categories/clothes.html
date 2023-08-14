@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Clothes 
+{% endblock title %}
+
+{% block content %}
+    <h1>Clothes Sale</h1>
+    {% for cloth in clothes %}
+        <div class="product">
+            <h2>{{ cloth.title}}</h2>
+            <a href="{% url 'clothes_detail' cloth.pk %}"><img src="{{ cloth.image.url }}" alt="product"/></a>
+            <p>Added: {{ cloth.date }}</p>
+            <p>Price: ${{ cloth.price }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}
